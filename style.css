@@ -1,0 +1,310 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@500;600;700&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+body {
+  font-family: 'Spartan', sans-serif;
+  color:  hsl(0, 0%, 27%);
+  font-size: 12px;
+}
+
+/*Grid container 1*/
+.navbar {
+ display: flex;
+ padding: 3rem 10rem;
+}
+
+.burger-icon,
+.close-icon {
+  transform: scale(1.5);
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  display: none;
+  cursor: pointer;
+}
+
+.logo {
+  transform: scale(1.3);
+  position: absolute;
+  top: 50px;
+  left: 70px;
+  display: block;
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 2rem;
+}
+
+.nav-links li {
+  margin: 0 1.5rem 0 1.5rem;
+}
+
+.nav-links li a {
+  color: white;
+  position: relative;
+  transition: 0.5s;
+  font-size: 1rem;
+}
+
+
+.nav-links li a::after {
+  position: absolute;
+  content: "";
+  margin-top: 5px;
+  width: 100%;
+  height: 2px;
+  top: 100%;
+  left: 0;
+  background: white;
+  transition: transform 0.5s;
+  transform: scaleX(0);
+  transform-origin: right;
+}
+
+.nav-links li a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.grid-container1 {
+  display: grid;
+  grid-template-columns: 58fr 42fr;
+  min-height: 450px;
+}
+
+.main-photo {
+  position: relative;
+  min-height: 450px;
+  max-width: 100%;
+}
+
+.main-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem 4rem 5rem 4rem;
+  position: relative;
+}
+
+.heading {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: black;
+}
+
+.paragraph {
+  line-height: 1.8;
+  font-size: .8rem;
+  margin-bottom: 2rem;
+}
+
+.shop-link {
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 8px;
+  font-weight: 600;
+  color: black;
+  font-size: 1rem;
+  transition: color .4s ease-in;
+  display: flex;
+}
+
+.shop-link:hover {
+  color: hsl(0, 0%, 63%);
+}
+
+.sliders {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+}
+
+.sliders-mobile {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: none;
+}
+
+.slider {
+  background: black;
+  padding: 25px;
+  cursor: pointer;
+  transition: all .4s ease-in;
+}
+
+.slider:hover {
+  background: hsl(0, 0%, 27%);
+}
+
+/*Grid container 2*/
+.grid-container2 {
+  display: grid;
+  grid-template-columns: 35fr 40fr 35fr;
+  min-height: 270px;
+}
+
+.left {
+  background: url("./images/image-about-dark.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 270px;
+}
+
+.right {
+  background: url("./images/image-about-light.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 270px;
+}
+
+.middle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.middle-text {
+  padding: 3rem 2rem;
+  line-height: 1.8;
+  font-size: .8rem;
+}
+
+.middle-text h3 {
+  text-transform: uppercase;
+  letter-spacing: 8px;
+  margin-bottom: .5rem;
+  color: black;
+  margin-bottom: 1rem;
+  font-size: .9rem;
+}
+
+
+
+@media screen and (max-width: 1200px) {
+  .main-text {
+  padding-top: 4rem;
+  }
+  
+  .heading {
+    font-size: 2.5rem;
+  }
+  .grid-container1,
+  .grid-container2 {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .sliders {
+    display: none;
+  }
+  .sliders-mobile {
+    display: flex;
+  }
+}
+
+
+@media screen and (max-width: 1024px) {
+  .main-text{
+    padding: 5rem;
+  }
+  .heading {
+    font-size: 2.3rem;
+  }
+  .grid-container1,
+  .grid-container2 {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .sliders {
+    display: none;
+  }
+  .sliders-mobile {
+    display: flex;
+  }
+  .middle-text {
+    padding: 5rem;
+}
+
+
+@media screen and (max-width: 768px) {
+  .main-text,
+  .middle-text {
+    padding: 3rem 3rem;
+  }
+  .heading {
+    font-size: 1.8rem;
+  }
+  .shop-link {
+    font-size: .8rem;
+    letter-spacing: 8px;
+  }
+  .grid-container1,
+  .grid-container2 {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .sliders {
+    display: none;
+  }
+  .sliders-mobile {
+    display: flex;
+  }
+  .middle-text h3{
+    font-size: .8rem;
+    letter-spacing: 3px;
+  }
+  .navbar {
+    display: flex;
+    padding: 2.5rem 0rem;
+    background: white;
+    display: none;
+   }
+  
+  .navbar.toggleCls {
+    display: flex;
+  }
+  .nav-links {
+    margin-left: 25%;
+  }
+  .nav-links li {
+    margin: .5rem .5rem;
+  }
+  .nav-links li a {
+    color: black;
+    font-size: .9rem;
+  }
+
+  .nav-links li a:after{
+    background: black;
+  }
+  .logo {
+    left: 45%;
+  }
+  .burger-icon {
+    display: block;
+    color: black;
+  }
+  .close-icon {
+    display: none;
+  }
+  .close-icon.toggleCls {
+    display: block;
+  }
+  .burger-icon.toggleCls {
+    display: none;
+  }
+  .logo.toggleCls {
+    display: none;
+  }
+}
+}
